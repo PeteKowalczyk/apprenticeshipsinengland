@@ -1,4 +1,19 @@
-{% extends "layout.html" %} {% block page_title %} Sprint {{sprint}} - Dashboard {% endblock %} {% block inside_header %} {% endblock %} {% block content %} {% block after_header %} {% include "sprint/"+sprint+"/includes/header.html" %} {% endblock %}
+{% extends "layout.html" %} 
+
+{% block page_title %} 
+
+Sprint {{sprint}} - Dashboard 
+
+{% endblock %} 
+
+{% block inside_header %} {% endblock %} 
+
+{% block content %} 
+
+{% endblock %}
+
+{% block after_header %} 
+{% include "../includes/header.html" %}
 
 <main id="content" role="main" tabindex="-1">
     <h1 class="heading-xlarge">

@@ -10,7 +10,7 @@
         "spec": ">=5.0.0 <6.0.0",
         "type": "range"
       },
-      "/Users/pete/website/das-mya-beta"
+      "/Development/projects-gov/styleguide"
     ]
   ],
   "_from": "govuk_frontend_toolkit@>=5.0.0 <6.0.0",
@@ -44,7 +44,7 @@
   "_shasum": "f5f6c5ae48e431ecb97d8b808b1e8db7782abc7f",
   "_shrinkwrap": null,
   "_spec": "govuk_frontend_toolkit@^5.0.0",
-  "_where": "/Users/pete/website/das-mya-beta",
+  "_where": "/Development/projects-gov/styleguide",
   "author": {
     "name": "Government Digital Service developers",
     "email": "govuk-dev@digital.cabinet-office.gov.uk"

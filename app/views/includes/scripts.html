@@ -12,7 +12,10 @@
 <script src="/public/javascripts/stackable.min.js"></script>
 <script src="/public/javascripts/zxcvbn.js"></script>
 <script src="/public/javascripts/hammer.min.js"></script>
-<script src="/public/javascripts/jquery.animateNumber.min.js"></script>
+<script src="/public/javascripts/jquery.hammer.js"></script>
+<script src="/public/javascripts//highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link rel="stylesheet" href="/public/stylesheets/highlight-dark.css" />
 
 <script src="/public/javascripts/aml.js"></script>
 
@@ -29,14 +32,30 @@
 
 
 <script>
-    
+
            
-  
-    
     
     
 $(document).ready(function () {
-        
+  
+  
+    
+    
+    if (localStorage.getItem("organisations") === null){
+    console.log("no orgs founddddd");
+    var newCompany = [];
+    var newCompanyDetails = {};
+    newCompanyDetails.name = "Acme Ltd2";
+    newCompanyDetails.signed = 0;
+    newCompany.push(JSON.stringify(newCompanyDetails));
+    console.log(newCompany);    
+    localStorage.setItem("organisations", JSON.stringify(newCompany));
+    }
+
+    
+               //localStorage.setItem("sessionState","0");
+
+    
     //GLOBAL VAR
     var XMLSource = $('#search').attr('xmlData');
     var keyword = '';
@@ -153,6 +172,7 @@ break;
 break;
        case 'zxcvbn':
            captureUserData();
+           passwordPeek();
 break;
        case 'login' :
            loginUser();
@@ -163,15 +183,159 @@ break;
        case 'test-react-instructions' :
                        localStorage.setItem("reactLoop","1");
 break;
+       case 'confirm' :
+            confirmDetails();     
+break;
+       case 'provider-index' :
+           providerIndex();
+break;
+       case 'contract-of-service' :
+           contractOfService();
+break;
+       case 'no-contract-of-service' :
+           noContractOfService();
+break;
+       case 'confirm-apprentices':
+           confirmApprentices();
+break;
+       case 'confirm-identity' :
+           confirmIdentity();
+break;
+       case 'choose-option-0':
+            chooseOption0();
+break;
+       case 'approve-question':
+           approveQuestion();
+break;
+       case 'first-approval':
+           firstApproval();
+break;
 default: break;
    };
     
+    function firstApproval() {
+           $(".button").click(function(e){
+                    e.preventDefault();
+                        var state = $('input[name=radio-group]:checked').val();
+
+                    if ( state == "1" ) {
+                        // if they have already approved a commitment
+                        window.location.href = "/sprint/{{sprint}}/providers/memo.html";
+                    } else {
+                        window.location.href = "/sprint/{{sprint}}/providers/cohort-approve-no-memo.html"
+                    }
+                });   
+    }
+    function approveQuestion() {
+         $(".button").click(function(e){
+                    e.preventDefault();
+                        var state = $('input[name=radio-group]:checked').val();
+
+                    if ( state == "1" ) {
+                        // if they have already approved a commitment
+                        window.location.href = "/sprint/{{sprint}}/providers/first-approval.html";
+                    } else {
+                        window.location.href = "/sprint/{{sprint}}/providers/sign-agreement.html"
+                    }
+                });   
+    }
+    
+    function chooseOption0() {
+              $(".button").click(function(e){
+                    e.preventDefault();
+                        var state = $('input[name=radio-group]:checked').val();
+
+                    if ( state == "1" ) {
+                        // if they have already approved a commitment
+                        window.location.href = "/sprint/{{sprint}}/providers/approve-question.html";
+                    } else if ( state == "2") {
+                        // if they haven't go to contract of service
+                        window.location.href = "/sprint/{{sprint}}/providers/memo.html";
+                    } else {
+                        window.location.href = "/sprint/{{sprint}}/providers/cohort-save.html"
+                    }
+                });   
+    }
+    
+    function confirmIdentity() {
+                  $(".button").click(function(e){
+                    e.preventDefault();
+                        var state = $('input[name=radio-group]:checked').val();
+
+                    if ( state == "1" ) {
+                        // if they have already approved a commitment
+                        window.location.href = "/sprint/{{sprint}}/providers/choose-option.html";
+                    } else {
+                        // if they haven't go to contract of service
+                        window.location.href = "/sprint/{{sprint}}/providers/advice-confirm-identity.html";
+                    }
+                });   
+    }
+    
+    function confirmApprentices() {
+                             $(".button").click(function(e){
+                   
+                        window.location.href = "/sprint/{{sprint}}/providers/choose-option.html";
+               
+                });   
+    }
+    
+    function noContractOfService() {
+                        $(".button").click(function(e){
+                    e.preventDefault();
+                        var state = $('input[name=radio-group]:checked').val();
+
+                    if ( state == "1" ) {
+                        // if they have already approved a commitment
+                        window.location.href = "/sprint/{{sprint}}/providers/advice-no-contract.html";
+                    } else {
+                        // if they haven't go to contract of service
+                        window.location.href = "/sprint/{{sprint}}/providers/choose-option.html";
+                    }
+                });
+    };
+    
+    
+    function contractOfService() {
+            
+                $(".button").click(function(e){
+                    e.preventDefault();
+                        var state = $('input[name=radio-group]:checked').val();
+
+                    if ( state == "1" ) {
+                        // if they have already approved a commitment
+                        window.location.href = "/sprint/{{sprint}}/providers/confirm-apprentices.html";
+                    } else {
+                        // if they haven't go to contract of service
+                        window.location.href = "/sprint/{{sprint}}/providers/no-contract-reason.html";
+                    }
+                });
+                    
+    };
+    
+    function providerIndex() {
+        
+                $(".button").click(function(e){
+                    e.preventDefault();
+                    
+                        var state = $('input[name=radio-group]:checked').val();
+                    
+                    if ( state == "1" ) {
+                        // if they have already approved a commitment
+                        window.location.href = "/sprint/{{sprint}}/providers/confirm-apprentices.html";
+                    } else {
+                        // if they haven't go to contract of service
+                        window.location.href = "/sprint/{{sprint}}/providers/contract-of-service.html";
+                    }
+               
+                });
+    }
     
     
     // Global string replacements    
 $(".orgnumber").text(JSON.parse(localStorage.getItem("organisation-number")));
 $(".organisation-name, .company-name").text(JSON.parse(localStorage.getItem("organisation-name")));
-$(".organisation-name, .company-name").val(JSON.parse(localStorage.getItem("organisation-name")));
+//$(".organisation-name, .company-name").val(JSON.parse(localStorage.getItem("organisation-name")));
 
     
     if ( JSON.parse(localStorage.getItem("user.name")) != "" ) {
@@ -181,74 +345,36 @@ $(".organisation-name, .company-name").val(JSON.parse(localStorage.getItem("orga
     }
     
 $(".organisation-address").text(JSON.parse(localStorage.getItem("organisation-address")));
-  
-    
-    
-    
       // my functions
+ $('.review-agreement-button').on('click', function(e) {
+	 localStorage.setItem("signAgreementFor",$(this).data('org-index'));
+ });   
     
-    
-    
-function testReactCountdown() {
-    
-    $("#word, #response").hide();
-    
-    
-        i = localStorage.getItem("reactLoop");      
-        if ( i < 3 ) {
-        i++;
+function confirmDetails() {
+    $(".button").click(function(e){
+        e.preventDefault();        
+        var orgName = JSON.parse(localStorage.getItem("organisation-name"));
+        addOrg(orgName);
+        var onboarding = JSON.parse(localStorage.getItem("onboarding"));
 
-    function countDown(i) {
-        var int = setInterval(function () {
-            if ( i != 0 ) {        
-            $("#countdown div").text(i-1);
-            i-- || clearInterval(int);   //if i is 0, then stop the interval
+        if ( onboarding == 1 ) {
+        window.location.href = "/sprint/{{sprint}}/account/dashboard/index.html?accountCreated=y";
             }
-            else {
-                showWord();
-                clearInterval(int);
-                // console.log("boom"); 
-                }
-        }, 1000);
-    } countDown(3);       } else {
-            // show the word
-            alert("the end");
-        goToNextReactTest();
-        }
-    
-}
-    
-    
-    
-    function showWord(){
-          //var i = 1;
+        else {
+       window.location.href = "/sprint/{{sprint}}/account/organisations/index.html?orgAdded=y";
             
-        localStorage.setItem("reactLoop",i);
-        $("#countdown").hide();
-        $("#word").show();
-        var start = new Date();
-
-        document.onkeypress=function(e){
-        //do the required work
-            var elapsed = new Date() - start;
-            console.log(elapsed);
-            $("#word").hide();
-            $("#response").show();
-            $("#continue").click(function(e){
-                e.preventDefault();
-                console.log(elapsed)
-                location.reload();
-            });
         }
-    };
+    });
+}    
     
-    function goToNextReactTest() {
+
+    
+    
+    function organisationsIndex(i) {
         
-    }
-    
-    
-    function organisationsIndex() {
         
+                      sessionState = localStorage.setItem("onboarding","0");            
+
         
  
 
@@ -259,31 +385,39 @@ function testReactCountdown() {
                         orgArray = JSON.parse(localStorage.getItem("organisations"));
                         
                         var $table = $( "<table class='table'></table>" );
-    var $head = $("<thead><tr><th scope='col' style='padding-top:0'>Organisation</th><th>Spending status </th><th>Signed by</th><th></th></tr></thead>");                
+    var $head = $("<thead><tr><th scope='col' style='padding-top:0'>Organisation</th><th>Agreement</th><th></th></tr></thead>");                
     $table.append( $head );
 
                         
 for ( var i = 0; i < orgArray.length; i++ ) {
     
 
-    var orgName = orgArray[i];
+
+	orgName = JSON.parse(orgArray[i]);
+    
     var $line = $( "<tr></tr>" );
 
+    // this is if it is disabled 
 
-    if (i === 0 ) { 
-    $line.append( $( "<td></td>" ).html( orgName ) );
-    $line.append( $( "<td><a href='/sprint/{{sprint}}/account/organisations/sign.html'>Enable spending</a></td>" ) );
-    $line.append( $( "<td><div></div><div style='color:#6F777B' class='font-xsmall'>Not signed</div></td>" ) );
-    $line.append( $( "<td class='numeric'><a href='/sprint/{{sprint}}/account/organisations/sign.html' id='"+i+"' class='remove'>Remove</a></td>" ) );
+    if (orgName.signed != 0 ) { 
+    // this is if its enabled
+    //$line.append( $( "<td><a href='#'></a></td>" ).html( orgName ) );
+    $line.append( $( "<td>" + orgName.name +"</td>" ));
+    $line.append( $( "<td>Signed by <span class='user-name'>John Doe</span><div style='color:#6F777B' class='font-xsmall'>Signed on: <span class='today'>"+ orgName.date +"</span></div></td>" ) );
+
+    $line.append( $("<td class='numeric'><a class='button text-link' href='/sprint/{{sprint}}/account/organisations/agreement-cover-signed.html'>View</a></td>") );
+    //$line.append( $( "<td class='numeric'><a href='/sprint/{{sprint}}/account/organisations/sign.html' id='"+i+"' class='remove'>Remove</a></td>" ) );
     $table.append( $line );
     continue;
     }
-    
-    $line.append( $( "<td></td>" ).html( orgName ) );
-    $line.append( $( "<td>Spending enabled</td>" ) );
-    $line.append( $( "<td><div>John Doe</div><div style='color:#6F777B' class='font-xsmall'>Signed on: 14 May 2017</div></td>" ) );
-    $line.append( $( "<td class='numeric'><a href='/sprint/{{sprint}}/account/organisations/sign.html' id='"+i+"' class='remove'>Remove</a></td>" ) );
+    $line.append( $( "<td>"+ orgName.name +"</td>" ));
+    $line.append( $( "<td>Agreement not signed<div style='color:#6F777B' class='font-xsmall'>SFA agreement needs to be signed</div></td>" ) );
+
+    $line.append( $("<td class='numeric'><a href='/sprint/{{sprint}}/account/organisations/agreement-cover-sign.html' class='button secondary review-agreement-button' data-org-index='"+i+"'>Sign agreement</a></td>"));
+    //$line.append( $( "<td class='numeric'><a href='/sprint/{{sprint}}/account/organisations/sign.html' id='"+i+"' class='remove'>Remove</a></td>" ) );
     $table.append( $line );
+    
+
 }
 
 
@@ -296,7 +430,7 @@ $table.appendTo( $( "#orgTable" ) );
                     }
             var orgArray = []
             orgArray = JSON.parse(localStorage.getItem("organisations"));
-            
+            console.log(orgArray);
             $("table a.remove").click(function(e){
             e.preventDefault();
             //get the number of the row
@@ -308,6 +442,8 @@ $table.appendTo( $( "#orgTable" ) );
                 localStorage.setItem("organisations", JSON.stringify(orgArray));
               window.location.href = "/sprint/{{sprint}}/account/organisations/index.html";
         });
+        
+        userName();
         
     }
     
@@ -334,7 +470,7 @@ $table.appendTo( $( "#orgTable" ) );
         $(".button").click(function(e){
           e.preventDefault();
             var orgName = $("#name").val();
-            addOrg(orgName);
+            //addOrg(orgName);
             
         localStorage.setItem("organisation-name", JSON.stringify(orgName));
             window.location.href = "/sprint/{{sprint}}/account/organisations/address.html";
@@ -347,17 +483,19 @@ $table.appendTo( $( "#orgTable" ) );
         
         // This function takes a name and adds it to a list of organisations in an array
             var orgArray = new Array;
+            
+            var newOrg = '{"name":"'+ orgName +'","signed":0}';
 
             //find out if there is a local storage for orgs already
             if (localStorage.getItem("organisations") === null) {
-                orgArray.push(orgName);
+                orgArray.push(newOrg);
                 localStorage.setItem("organisations", JSON.stringify(orgArray));
 
             } else {                
                 //orgArray = JSON.parse("["+localStorage.getItem("organisations")+"]");
                 orgArray = JSON.parse(localStorage.getItem("organisations"));
                 //orgArray.push(orgName);
-                orgArray.push(orgName);
+                orgArray.push(newOrg);
                 localStorage.setItem("organisations", JSON.stringify(orgArray));
             }
     }
@@ -415,19 +553,24 @@ $table.appendTo( $( "#orgTable" ) );
       $("#sign2").click(function(e){
           e.preventDefault();
         //  check if this is on-boarding or not
-              var onboarding = JSON.parse(localStorage.getItem("onboarding"));
-
-          if (onboarding == "1" ) {
-              //alert("onboarding user")
-              // take to account success - onboarding
-              sessionState = localStorage.setItem("sessionState","1");
-              sessionState = localStorage.setItem("onboarding","0");
-              window.location.href = "/sprint/{{sprint}}/account/dashboard/index.html?accountCreated=y";
-          } else {
-              //alert("normal user")
-              // add legal entity complete
-              window.location.href = "/sprint/{{sprint}}/account/organisations/index.html?newOrgSigned=y";
-          }
+        
+        var today = new Date();
+        var date = today.getDate() + '/' + (today.getMonth()+1) + '/' + today.getFullYear();
+        
+        var orgToSign = localStorage.getItem("signAgreementFor"),
+        	organisations = JSON.parse(localStorage.getItem("organisations"));
+        	
+        existingDetails = JSON.parse(organisations[orgToSign]);
+        existingDetails.signed = 1;
+        existingDetails.date = date;
+        
+        organisations[orgToSign] = JSON.stringify(existingDetails);
+                
+        localStorage.setItem("organisations", JSON.stringify(organisations));
+        
+        var onboarding = JSON.parse(localStorage.getItem("onboarding"));
+		window.location.href = "/sprint/{{sprint}}/account/organisations/index.html?newOrgSigned=y";
+          
       });
     };
     
@@ -520,7 +663,7 @@ $table.appendTo( $( "#orgTable" ) );
                     }
                     else {
                             localStorage.setItem("organisation-type", JSON.stringify("ltd"));
-                            window.location.href = "/sprint/{{sprint}}/account/organisations/confirm.html?name='Acme Ltd'";            
+                            window.location.href = "/sprint/{{sprint}}/account/organisations/confirm.html?name=Acme%20Plc";            
                     }
 
                 } else if ( $('input[name=radio-group]:checked', 'form').val() == "public" ) {
@@ -632,7 +775,7 @@ $table.appendTo( $( "#orgTable" ) );
             e.preventDefault();
             var orgName = $(this).text();
             var href = this.href;
-            addOrg(orgName);
+            //addOrg(orgName);
             localStorage.setItem("organisation-name", orgName);
             window.location.href = href;
         })
@@ -819,7 +962,7 @@ var chart = c3.generate({
     
 
     // get & set sprint
-    var sprint = {{sprint}};
+    var sprint = "house";
     localStorage.setItem("sprint", JSON.stringify(sprint));
     
     if ( sprint == 11 ) {
@@ -1062,7 +1205,7 @@ var chart = c3.generate({
    
     
 
-    
+    function passwordPeek() {
 var myElement = document.getElementById('peak');
 
 // create a simple instance
@@ -1099,7 +1242,7 @@ mc.on("pressup", function(ev){
     }
 });*/
 
-
+}
     
 $("#password").focusin(function(){
    $(".popover").slideDown("slow");
@@ -1239,10 +1382,65 @@ console.log("score is " + resultScore)
    $(".organisation-name, .company-name").val(JSON.parse(localStorage.getItem("organisation-name")));    
     }
   
+    function userName(){
+            $(".user-name").text(JSON.parse(localStorage.getItem('user.firstName')));
+    }
     
     
-    
+    function today() {
+           var monthNames = [
+  "January", "February", "March",
+  "April", "May", "June", "July",
+  "August", "September", "October",
+  "November", "December"
+];
 
+var date = new Date();
+var day = date.getDate();
+var monthIndex = date.getMonth();
+var year = date.getFullYear();
+
+//console.log(day, monthNames[monthIndex], year);
+    $(".today").text(day + ' ' + monthNames[monthIndex] + ' ' + year);
+    }
+  today();  
+    
+    
+    
+    function companiesHouseApi(){
+var chApiKey = "fNoTIfmTDt5fP0kKESHsxQSfa2DVzKXBDzCrFQkV";
+
+ var company_number = "09963675";
+    
+    			$.ajax({
+					url: "https://api.companieshouse.gov.uk/company/",
+					type: "GET",
+					crossDomain: true,
+					contentType: "application/json",
+					data: company_number,
+					dataType:'json',
+					success: function(data){
+						//Response text
+						alert(data);					
+					},
+					beforeSend: function (xhr) {
+						xhr.withCredentials = true;
+						xhr.setRequestHeader ("Authorization", make_base_auth(encodeURIComponent(chApiKey)))
+					},
+					error:function(){
+						//Gat failure
+						alert("failure");
+
+					}
+			});
+
+
+		function make_base_auth(user) {
+			var tok = user;
+			var hash = btoa(tok);
+			return "Basic " + hash;
+		}
+}
     
 </script>
 

@@ -1,132 +1,155 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  GOV.UK elements
+  Sprint {{sprint}} - Dashboard
 {% endblock %}
+
+{% block inside_header %}
+
+{% endblock %}
+
+
+
 
 {% block content %}
 
-<main class="elements-index" id="content" role="main" tabindex="-1">
+
+{% block after_header %}
+{% include "includes/header.html" %}
+{% endblock %}
 
 
+<main class="index" id="content" role="main" tabindex="-1">
 
-  <div class="grid-row">
-    <div class="column-two-thirds">
+    <div class="hgroup text">
 
       <h1 class="heading-xlarge">
-        Manage apprenticeships
-      </h1>
+Content design at ESFA
+            </h1>
+            <div class="text">
+              <p class="lede">
+How to design words for ESFA interfaces.              </p>
+<p>For interface design, you can refer to <a href="">the ESFA pattern library</a>.</p>
+            </div>
+  </div><div class="grid-row">
+      <div class="column-one-third">
 
-      <p class="lede">
-        This guide shows how to make your service look consistent with the rest of GOV.UK.
+        <h2 class="heading-medium"><a href="/language">Controlled language</a></h2>
+        <p>
+            The terms we use for certain concepts, and why we use them.
+          </p>
+
+
+      </div>
+        <div class="column-one-third">
+
+      <h2 class="heading-medium"><a  href="/style">Style</a></h2>
+      <p>
+          Grammar and punctuation, and all that good stuff.
       </p>
+
+
+    </div>
+
+    <div class="column-one-third">
+
+      <h2 class="heading-medium"><a  href="/voice">Voice and tone</a></h2>
+      <p>
+How and when we add a human touch to our interfaces.
+      </p>
+
+
+    </div>
+
+
+    </div>
+    <div class="grid-row">
+
+    <div class="column-one-third">
+
+      <h2 class="heading-medium"><a  href="/headings">Headings</a></h2>
+      <p>
+          How we write headings, and maintain structure and consistency.
+      </p>
+
+
+    </div>
+    <div class="column-one-third">
+
+      <h2 class="heading-medium"><a  href="/askingquestions">Asking questions</a></h2>
+      <p>
+         How we create a clear dialogue with users.
+        </p>
+
+
+    </div>
+
+    <div class="column-one-third">
+
+      <h2 class="heading-medium"><a href="/checkdetails">Confirming details</a></h2>
+      <p>
+          Patterns to follow when asking users to confirm information.
+        </p>
+
 
     </div>
   </div>
+    <div class="grid-row">
 
-  <div class="grid-row">
+            <div class="column-one-third">
+
+      <h2 class="heading-medium"><a href="/validation">Validation messages</a></h2>
+      <p>
+          The formats to use for inline messages.
+      </p>
+
+
+    </div>
+
     <div class="column-one-third">
 
-      <h2 class="heading-medium"><a href="/layout/">Layout</a></h2>
+      <h2 class="heading-medium"><a href="/banners">Banners</a></h2>
       <p>
-        Grid unit proportions, gutters and spacing.
-      </p>
+          How to give users feedback using banners.
+    </p>
+
 
     </div>
     <div class="column-one-third">
 
-      <h2 class="heading-medium"><a href="/typography/">Typography</a></h2>
-      <p>
-        Headings, body text, links, lists, inset text, hidden text.
-      </p>
+<h2 class="heading-medium"><a  href="/hyperlinks">Hyperlinks</a></h2>
+<p>
+    How to make hyperlinks useful and accessible.
+</p>
+
+
 
     </div>
-    <div class="column-one-third">
 
-      <h2 class="heading-medium"><a href="/colour/">Colour</a></h2>
-      <p>
-        Colour contrast, Sass variables, colour palettes.
+
+
+
+  <div class="column-one-third">
+
+    <h2 class="heading-medium"><a href="/buttons">Buttons</a></h2>
+    <p>
+        How to format text for buttons.
       </p>
 
-    </div>
+
   </div>
 
-  <div class="grid-row">
-    <div class="column-one-third">
 
-      <h2 class="heading-medium"><a href="/icons-images/">Icons and images</a></h2>
-      <p>
-        Icons and image ratios.
-      </p>
+    <div class="column-one-third" style="outline: 4px solid #ffbf47;">
 
-    </div>
-    <div class="column-one-third">
+  <h2 class="heading-medium"><a href="https://sfadigital.blog.gov.uk/">ESFA Digital blog</a></h2>
+  <p>
+  On-the-ground stories about content design and service delivery at ESFA.</p>
 
-      <h2 class="heading-medium"><a href="/data/">Data</a></h2>
-      <p>
-        Data in a table, numeric tabular data, data visualisation.
-      </p>
-
-    </div>
-    <div class="column-one-third">
-
-      <h2 class="heading-medium"><a href="/buttons/">Buttons</a></h2>
-      <p>
-        Button text, button alignment, creating buttons.
-      </p>
-
-    </div>
   </div>
 
-  <div class="grid-row">
-    <div class="column-one-third">
-
-      <h2 class="heading-medium"><a href="/form-elements/">Form elements</a></h2>
-      <p>
-        Form fields, labels, focus states, radio buttons, checkboxes.
-      </p>
-
     </div>
-    <div class="column-one-third">
 
-      <h2 class="heading-medium"><a href="/errors/">Errors and validation</a></h2>
-      <p>
-        Summary boxes, highlighting errors in forms.
-      </p>
-
-    </div>
-    <div class="column-one-third">
-
-      <h2 class="heading-medium"><a href="/alpha-beta-banners/">Alpha and beta banners</a></h2>
-      <p>
-        How to create alpha and beta banners using the front-end toolkit.
-      </p>
-
-    </div>
-  </div>
-
-  <div class="grid-row divider">
-    <div class="column-two-thirds">
-
-      <h3 class="heading-small">Looking for the styles?</h3>
-      <p>
-         The Sass files for <a href="https://github.com/alphagov/govuk_elements/tree/master/public/sass" rel="external">all the examples can be found on GitHub</a>.
-      </p>
-
-      <h3 class="heading-small">Want to discuss these patterns?</h3>
-      <p>
-        <a href="https://designpatterns.hackpad.com/" rel="external">Discuss design patterns for GOV.UK services on our hackpad</a>.
-      </p>
-
-    </div>
-  </div>
 
 </main><!-- / #content -->
-
 {% endblock %}
-
-{% block body_end %}
-  <!-- GOV.UK elements redirect -->
-  <script src="/public/javascripts/redirect.js"></script>
-{% endblock %}
-

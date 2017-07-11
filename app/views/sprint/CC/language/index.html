@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Sprint {{sprint}} - Dashboard
+{% endblock %}
+
+{% block inside_header %}
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+{% block after_header %}
+{% include "sprint/"+sprint+"/includes/header.html" %}
+{% endblock %}
+
+<main id="content" role="main" tabindex="-1">
+  <h1 class="heading-xlarge">
+    Controlled lanuage
+  </h1>
+
+  <p><span class="lede">The terms we use for certain concepts, and why we use them.</span></p><br>
+
+<p><span class="bold-small">Account</span> - is the employer’s account. We don’t call it levy account because it’s not just an account for levy, it’s a ledger of non-levy transactions too.</p>
+
+
+<p><span class="bold-small">Add an apprenticeship</span> - the action of creating a commitment for an apprentice.</p>
+
+
+<p><span class="bold-small">Agreement</span> - The legal agreement signed between the ESFA and an employer, employer-provider or training provider.</p>
+
+
+<p><span class="bold-small">Agreement not signed / Agreement signed</span>  - employers can only spend funds on behalf of their organisation if that organisation has a signed agreement.</p>
+
+
+<p><span class="bold-small">Apprenticeship Assessment Organisation</span>  - The organisation responsible for assessing the learning and skills of an apprentice as a result of their apprenticeship.</p>
+
+
+<p><span class="bold-small">Apprenticeship training course</span>  - The training given by the training provider to the apprentice. This could be either for an apprenticeship standard or a framework.</p>
+
+
+<p><span class="bold-small">Approve</span>  - Both employers and providers ‘approve’ cohorts once they’re happy that all the necessary apprentices have been added and their details are correct. This approval is authorisation for the release of funds.</p>
+
+
+<p><span class="bold-small">Authorise payments to training providers</span>  - The release of levy funds from an employer’s account to a training provider.</p>
+
+
+<p><span class="bold-small">Bulk upload</span>  - The ability to add details of multiple apprentices to your account at the same time by uploading a csv file.</p>
+
+
+<p><span class="bold-small">Changes for review</span>  - Changes made to an apprentice’s details, by another party, that you need to review and then either approve or reject.</p>
+
+
+<p><span class="bold-small">Changes pending</span>  - Changes that you’ve made to an apprentice’s details, that another party need to review and either approve or reject.</p>
+
+<p><span class="bold-small">Cohort</span>  - One or more apprentices being entered into the apprenticeship service at the same time, all part of the same contract for services between a legal entity and training provider.</p>
+
+<p><span class="bold-small">Co-investment</span> - policy mechanism where government pays 90% of the cost of an apprenticeship, and the employer pays the remaining 10%.</p>
+
+<p><span class="bold-small">Co-investment you've gained</span> - term used as a behavioural nudge to help frame the spending of funds as a gain.</p>
+
+<p><span class="bold-small">Committed spend</span> - the funds that will be taken out of an employer’s account according to the commitments they’ve created.</p>
+
+<p><span class="bold-small">Connected organisations</span>  - An organisation is ‘<a href="https://www.gov.uk/government/publications/employment-allowance-more-detailed-guidance">connected</a>’ to your organisation if your organisation has control of it or if both organisations are controlled by the same people, such as a board of directors.</p>
+
+<p><span class="bold-small">Contract</span>  - A contract for services between an employer and a training provider.</p>
+
+<p><span class="bold-small">Current funds</span> - the current amount of levy funds in an employer’s account.</p>
+
+<p><span class="bold-small">End-point assessments</span>  - The assessment that takes place towards the end of an apprenticeship to make sure each apprentice has reached the necessary level to be awarded an apprenticeship.</p>
+
+<p><span class="bold-small">End-point assessors</span>  - The individuals or organisations carrying out end-point assessments on apprentices.</p>
+
+<p><span class="bold-small">English percentage / English %</span>  - spell out the term in sentences and use the % symbol when using it for tabular data . The English percentage is provided by HMRC based on the data in the employer’s payroll submissions. It represents the proportion of the employer’s payroll that's paid to their employees that live in England.</p>
+
+<p><span class="bold-small">ESFA</span>  - spell it out on first instance including the word ‘the’, eg contact the Education and Skills Funding Agency (ESFA). Subsequently, use the acronym and don’t use the word ‘the’, eg contact ESFA.</p>
+
+<p><span class="bold-small">Expiring funds / Use funds</span> - the funds that will disappear from the employer’s account according to sunsetting rules. If funds aren’t spent, they expire after 24 months. Term used as a behavioural nudge. 'Use funds' is the CTA for spending the expiring funds. This term is used as a behavioural nudge.</p>
+
+<p><span class="bold-small">Financial data</span> - the raw financial data that employers can download from their account.</p>
+
+<p><span class="bold-small">Funds credit your account</span> - we say funds credit the account. This is a fast way to give employers immediate understanding of what’s happening. We don’t say ‘enter the account’ because money doesn’t enter anything, the account is a digital representation of credit.</p>
+
+<p><span class="bold-small">Funding band maximum</span> - The upper limit that can be contributed from levy funds to pay for an individual apprenticeship training course (including assessment). The training provider will need to invoice employers for any amounts above this limit.</p>
+
+<p><span class="bold-small">ILR data mismatch</span> - A difference in the data held in the apprenticeship service and the data held in the ILR which could result in a payment failure if not resolved.</p>
+
+<p><span class="bold-small">Incentives</span> - terms for the incentive payments that employers receive for taking on certain types of apprenticeships.</p>
+
+<p><span class="bold-small">Incentives you've gained</span> - term used as a behavioural nudge to help frame the spending of funds as a gain.</p>
+
+<p><span class="bold-small">Live</span> - An apprentice that has started their apprenticeship training course.</p>
+
+<p><span class="bold-small">Levy funds</span> - the funds that are in an employer’s account.</p>
+
+<p><span class="bold-small">Levy paid to HMRC</span> - the levy funds that were taken via the employer’s payroll by HMRC.</p>
+
+<p><span class="bold-small">Levy payer</span> - is an organisation, or group of connected organisations, that has collective payroll above £3 million and therefore pays the levy.</p>
+
+<p><span class="bold-small">Organisation</span> - The legal entity that's named on the contract for services with the training provider.</p>
+
+
+<p><span class="bold-small">Overlapping training dates</span> - Two records for the same apprentice (based on unique learner number) that show the apprentice on two apprenticeship training courses at the same time. Note that start and end dates don’t need to match - the overlap could just be for a portion of the training period.</p>
+
+
+<p><span class="bold-small">Paused</span> - An apprentice who’s temporarily stopped their training, possibly due to illness. There won’t be any payments leaving the account for this apprentice, although this can be undone.</p>
+
+<p><span class="bold-small">Payment schedule</span> - A summary of the anticipated cost breakdown for a cohort across the duration of their learning.</p>
+
+<p><span class="bold-small">Resume</span> - The ability to re-start an apprentice who’s currently in the apprenticeship service in a ‘paused’ state.</p>
+
+<p><span class="bold-small">Spending status</span> - label for whether or not an organisation has a signed agreement and can spend funds.</p>
+
+<p><span class="bold-small">Spending disabled</span> - no signed agreement.</p>
+
+<p><span class="bold-small">Spending enabled</span> - has signed agreement.</p>
+
+<p><span class="bold-small">Stopped</span> - An apprentice who’s left their apprenticeship training course. This may be because they’ve left the company. There won’t be any payments leaving the account for this apprentice.</p>
+
+<p><span class="bold-small">Team member / Your team</span> - terms for an employer’s own staff members or colleagues.<br>
+
+<p><span class="bold-small">Total agreed apprenticeship price</span> - How much the training provider is charging the employer for the apprentice’s training, including both the training and assessment elements of the apprenticeship.</p>
+
+<p><span class="bold-small">Waiting to start</span> - An apprentice whose records have been approved by both the employer and provider within the apprenticeship service, but who hasn’t reached the planned training start date for their apprenticeship yet.</p>
+    </div>
+  </div>
+
+
+
+</main>
+{% endblock %}

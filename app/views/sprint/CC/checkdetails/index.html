@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Sprint {{sprint}} - Dashboard
+{% endblock %}
+
+{% block inside_header %}
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+{% block after_header %}
+{% include "sprint/"+sprint+"/includes/header.html" %}
+{% endblock %}
+
+<main id="content" role="main" tabindex="-1">
+  <h1 class="heading-xlarge">
+      Confirming details
+    </h1>
+    <p class="lede">
+  Patterns to follow when asking users to confirm information.     </p>
+  <div class="text">
+    We use the following design pattern when asking users to confirm or check details they’ve entered.</p>
+
+  Header: <span class="bold-small">Check details</span><br>
+    Confirm button: <span class="bold-small">These details are correct</span><br>	Followed be a hyperlink: <a href="">Change details</a>
+
+  </div>
+
+
+
+</main>
+{% endblock %}

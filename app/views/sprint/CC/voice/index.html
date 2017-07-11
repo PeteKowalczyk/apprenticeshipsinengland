@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Sprint {{sprint}} - Dashboard
+{% endblock %}
+
+{% block inside_header %}
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+{% block after_header %}
+{% include "sprint/"+sprint+"/includes/header.html" %}
+{% endblock %}
+
+<main id="content" role="main" tabindex="-1">
+  <h1 class="heading-xlarge">
+      Voice and tone
+    </h1>
+    <p class="lede">
+  How and when we add a human touch to our interfaces.         </p>
+
+  <div class="text">
+
+<p>The main thing about voice and tone is users shouldn't notice it, and it shouldn’t get in the way of users doing their task. </p>
+
+<p>You can use the following voice and tone tables to help you find the right words to match the context you’re writing for.</p>
+
+<h2 class="heading-large">Voice and tone tables</h2>
+
+<span class="bold-small">For routine transactions our voice is clear and to-the-point</span><br>
+<span class="bold-small">Write like this: </span>Enter organisation name<br>
+<span class="bold-small">Not like this: </span>Please tell us which organisation you want to add<br>
+<span class="bold-small">Why? </span> We aim to reduce the cognitive burder on users wherever possible. Don't make them read more thnn they need to. </p>
+
+<span class="bold-small">In-service our voice is informative and tells users what they can do</span><br>
+<span class="bold-small">Write like this: </span>Payment failed because some details are missing or incorrect. <a href="">Check Yuval's details</a> and contact Acme training ltd.<br>
+<span class="bold-small">Not like this: </span>Sorry, your payment failed and we're not really sure why.<br>
+<span class="bold-small">Why? </span> We present the information users need at the exact point in time and exact page that they need it. </p>
+
+<span class="bold-small">In-service our voice is positive and supportive</span><br>
+<span class="bold-small">Write like this: </span>Agreement signed - Good Content ltd can now spend levy funds<br>
+<span class="bold-small">Not like this: </span>Agreement signed - return to homepage<br>
+<span class="bold-small">Why? </span> We use positive feedback to reassure users that they're on the right track, giving them confidence and peace of mind. </p>
+
+<span class="bold-small">In-service our voice is professional and competent</span><br>
+<span class="bold-small">Write like this: </span>Funds will credit your account from any PAYE schemes you add. No funds will credit your account until May 2017.<br>
+<span class="bold-small">Not like this: </span>Funds will hit your account around May 2017.<br>
+<span class="bold-small">Why? </span> We're handling sensitive corporate information and data, and it's important that user's trust and have confidence in ESFA as an agency. </p>
+
+<span class="bold-small">In-service our voice is personal, but not too personal</span><br>
+<span class="bold-small">Write like this: </span>Good morning, welcome to your account.<br>
+<span class="bold-small">Not like this: </span>Hey Pete, welcome to your account. <br>
+<span class="bold-small">Why? </span> Just because we know the user's name doesn't mean we should always use it. Some people prefer to be addressed by their surname or their title, eg Dr. Jekyll.</p>
+
+<span class="bold-small">For emails our voice is more personal</span><br>
+<span class="bold-small">Write like this: </span>Dear Pete, Here’s you access code... kind regards<br>
+<span class="bold-small">Not like this: </span>Dear user, This email contains your access code... <br>
+<span class="bold-small">Why? </span> As opposed to interfaces, emails are a more legitimate form of dialogue and are more intimate. Using the user's name also helps reduce the risk of emails being flagged up as spam by organisations' firewalls.</p>
+
+<span class="bold-small">For help and support our voice is neutral and direct</span><br>
+<span class="bold-small">Write like this: </span>The PAYE scheme for the Government Gateway details you entered is already added to an account.<br>
+<span class="bold-small">Not like this: </span>Sorry, PAYE scheme not added! Check that it's not already added to your account.<br>
+<span class="bold-small">Why? </span> When things go wrong, users need to know why. Best to avoid any unecessary personality in help messages.</p>
+
+
+</main>
+{% endblock %}

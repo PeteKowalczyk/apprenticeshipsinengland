@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Sprint {{sprint}} - Dashboard
+{% endblock %}
+
+{% block inside_header %}
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+{% block after_header %}
+{% include "sprint/"+sprint+"/includes/header.html" %}
+{% endblock %}
+
+
+
+<main id="content" role="main" tabindex="-1">
+
+  <h1 class="heading-xlarge">
+  Style
+  </h1>
+  <p class="lede">
+Grammar and punctuation, and all that good stuff.            </p>
+
+  <div class="text">
+  <p>
+    Our style is based on <a href="https://www.gov.uk/guidance/style-guide">the GDS style guide</a>.</p>
+    <h2 class="heading-medium">Additonal style considerations</h2>
+
+<p>Don’t use a hyphen unless it’s confusing without it</p>
+    <p>  Don’t use e.g. and i.e. Use 'for example' or ‘like’</p>
+  <p>  Try to start sentences with the user’s objective. For example: To spend funds, you need to <a href="">sign an agreement for Tesco plc</a>
+      </p>
+  </div>
+
+
+
+
+  </div>
+
+
+
+</main>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Sprint {{sprint}} - Dashboard
+{% endblock %}
+
+{% block inside_header %}
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+{% block after_header %}
+{% include "sprint/"+sprint+"/includes/header.html" %}
+{% endblock %}
+
+<main id="content" role="main" tabindex="-1">
+  <h1 class="heading-xlarge">
+
+    Banners
+  </h1>
+  <p class="lede">
+How to give users feedback using banners.  </p>
+  <div class="text">
+
+    <p>We use a front-loaded pattern for the main message which tends to mean it becomes passive. This means we can be direct and economical with space. Being passive isn't a problem as long as it's obvious who's done the action.</p>
+
+<p>We then include a drop lede to flesh out the implications of the action that has happened.</p>
+
+<p>For example:</p>
+
+  <p><span class="bold-small">Invitation sent</span><br>
+    You've sent an invitation to pete.kowalczyk@digi2al.co.uk.</p>
+
+      <p><span class="bold-small">Agreement signed</span><br>
+Good Content ltd can now spend levy funds.</p>
+
+    <p><span class="bold-small">100/UX00019 has been added</span><br>
+    Levy funds from this PAYE scheme will now credit your account.</p>
+
+          <p><span class="bold-small">Invitation cancelled</span><br>
+      You've cancelled the invitation sent to pete.kowalczyk@digi2al.co.uk.</p>
+
+
+  </div>
+
+</main>
+{% endblock %}

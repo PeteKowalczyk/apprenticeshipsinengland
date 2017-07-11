@@ -1,0 +1,23 @@
+{% extends "layout.html" %} {% block page_title %} Sprint {{sprint}} - Dashboard {% endblock %} {% block inside_header %} {% endblock %} {% block content %} {% block after_header %} {% include "sprint/"+sprint+"/includes/header.html" %} {% endblock %}
+
+<main id="content" role="main" tabindex="-1">
+    <h1 class="heading-xlarge">
+      Validation messages
+  </h1>
+  <p class="lede">
+  The formats to use for inline messages.    </p>
+    <div class="text">
+    </div>
+
+  <p>  Inline validation messaging needs to tell the user what they can do, rather than just say what the problem is.</p>
+
+  <p>So, rather than: Email address isn’t valid<br>
+  We can say: <span class="bold-small">Enter a valid email address</span></p>
+
+  <p>If you need to say what the problem is, always tell the user what they can do about it. For example:</p>
+
+  <p><span class="bold-small">Email already registered. <a href="">Log into your account</a>.</span></p>
+
+
+</main>
+{% endblock %}

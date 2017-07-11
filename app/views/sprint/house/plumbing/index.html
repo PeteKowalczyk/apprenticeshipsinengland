@@ -1,0 +1,922 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Sprint {{sprint}} - Dashboard
+{% endblock %}
+
+{% block inside_header %}
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+{% block after_header %}
+{% include "sprint/"+sprint+"/includes/header.html" %}
+{% endblock %}
+
+<main id="content" role="main" tabindex="-1">
+  <h1 class="heading-xlarge">
+      Plumbing &amp; Wiring
+  </h1>
+
+  <div class="text">
+    <p class="lede">
+The micro interactions joiningthe experience together
+    </p>
+  </div>
+
+  <h2 class="heading-small heading-contents">Contents:</h2>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <ul class="list list-contents">
+          <li><a href="#help">Help</a></li>
+          <li><a href="#user">User</a></li>
+          <li><a href="#notifications">Notifications</a></li>
+          <li><a href="#errors">Errors</a></li>
+          <li><a href="#information">Information</a></li>
+      </ul>
+    </div>
+  </div>
+    
+
+            <h2 id="notifications" class="heading-large">Notifications</h2>
+            <p>Why do we use notifications, what is the purpose, how and when should they implemented</p>
+            
+        <details>
+            <summary>SASS</summary>    
+            <pre>
+                <code class="sass">
+
+$info-colour:$light-blue;
+$success-colour:$turquoise;
+$warning-colour:$orange;
+
+// Container for notifications, to reduce space between them wehen there are multiple
+.notifications { 
+    .error-summary,.warning-summary,.success-summary,.info-summary{
+        margin-bottom:0px !important;
+        &:last-child {
+           margin-bottom:100px; 
+        }
+    }
+}
+
+// Share notification styles
+.error-summary, .info-summary, .success-summary, .warning-summary {
+    border-width: 4px;
+    border-style: solid;
+
+    margin-top: $gutter-half;
+    margin-bottom: $gutter-half;
+    padding: $gutter-half 10px;
+
+    @include media(tablet) {
+        border-width: 5px;
+        border-style: solid;
+
+        margin-top: $gutter;
+        margin-bottom: $gutter;
+
+        padding: $gutter-two-thirds $gutter-half $gutter-half;
+    }
+
+    @include ie-lte(6) {
+        zoom: 1;
+    }
+
+    // Use the GOV.UK outline focus style
+    &:focus {
+        outline: 3px solid $focus-colour;
+    }
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    &-heading {
+        margin-top: 0;
+    }
+    
+    @for $index from 1 through 6 {
+        h#{$index}{
+        }
+        h#{$index}[class^="heading-"] {
+            margin: 0;
+        }
+    }
+    
+    &-list {
+    padding-left: 0;
+        li {
+            @include media(tablet) {
+            margin-bottom: 5px;
+            }
+        }
+        a {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    }  
+}
+
+.info-dismiss, .success-dismiss, .warning-dismiss {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+// Info notification styles
+.info-summary {
+  border-color:$info-colour;
+
+  @include media(tablet) {
+    border-color:$info-colour;
+  }
+
+  .info-summary-list {
+    a {
+      color: $info-colour;
+    }
+  }
+  .info-dismiss {
+    color: $info-colour;
+  }
+}
+
+// Success notification styles
+.success-summary {
+  border-color:$success-colour;
+
+  @include media(tablet) {
+    border-color:$success-colour;
+  }
+
+  .success-summary-list {
+    a {
+      color: $success-colour;
+    }
+  }
+  .success-dismiss {
+    color: $success-colour;
+  }
+}
+
+// Warning notification styles
+.warning-summary {
+  border-color:$warning-colour;
+
+  @include media(tablet) {
+    border-color:$warning-colour;
+  }
+
+  .warning-summary-list {
+    a {
+      color: $warning-colour;
+    }
+  }
+  .warning-dismiss {
+    color: $warning-colour;
+  }
+}
+
+// ==========================================================================
+// This is a modifiation of the GDS pattern .govuk-box.highlight to include
+// padding on the inside of the box, incase of a long title
+// ==========================================================================
+
+.sfa-govuk-box-highlight {
+    padding-left:0.5em;
+    padding-right:0.5em;
+}                
+                </code>
+            </pre>
+        </details>            
+            
+            
+            <h3 class="heading-medium">Information summary</h3>
+            <p>Use when you just need an FYI</p>
+        <div class="example">
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                    <div class="info-summary">
+                        <h3 class="heading-medium">Information summary</h3>
+                        <p><a href="https://www.gov.uk/government/publications/apprenticeship-funding-legal-agreement-to-enable-spending" target="_blank">Read the <abbr title="Skills Funding Agency">SFA</abbr> agreement</a> - from May 2017, SFA will ask you to accept this agreement in order to spend apprenticeship funds.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+            
+            <p>Sometimes the messages are combined and appear in same notification, as in the example below.</p>
+            
+        <div class="example">
+            <div class="grid-row">
+                <div class="column-two-thirds">            
+            <div class="info-summary">
+                <h3 class="heading-medium">Information summary</h3>
+                <p><a href="https://www.gov.uk/government/publications/apprenticeship-funding-legal-agreement-to-enable-spending" target="_blank">Read the <abbr title="Skills Funding Agency">SFA</abbr> agreement</a> - from May 2017, SFA will ask you to accept this agreement in order to spend apprenticeship funds.</p>
+                <p><a href="https://www.gov.uk/government/publications/apprenticeship-funding-legal-agreement-to-enable-spending" target="_blank">Read the <abbr title="Skills Funding Agency">SFA</abbr> agreement</a> - from May 2017, SFA will ask you to accept this agreement in order to spend apprenticeship funds.</p>
+            </div>
+                </div>
+            </div>
+        </div>
+        
+
+            
+
+            <pre>
+                <code class="html">
+&lt;div class="info-summary"&gt;
+    &lt;h3 class="heading-medium">&lt;/h3&gt;
+    &lt;p>&lt;/p&gt;
+&lt;/div&gt;
+                </code>
+            </pre>
+
+            
+            <h3 class="heading-medium">Warning summary</h3>
+            <p>A form warning is used when a change is advanced but not a must.</p>            
+        <div class="example">
+                        <div class="grid-row">
+                <div class="column-two-thirds">   
+            <div class="warning-summary">
+                <h3 class="heading-medium">Warning summary</h3>
+                <p><a href="https://www.gov.uk/government/publications/apprenticeship-funding-legal-agreement-to-enable-spending" target="_blank">Read the <abbr title="Skills Funding Agency">SFA</abbr> agreement</a> - from May 2017, SFA will ask you to accept this agreement in order to spend apprenticeship funds.</p>
+            </div>
+                            </div>
+            </div>
+        </div>
+            
+            <pre>
+                <code class="html">
+&lt;div class="success-summary"&gt;
+    &lt;h3 class="heading-medium">&lt;/h3&gt;
+    &lt;p>&lt;/p&gt;
+&lt;/div&gt;
+                </code>
+            </pre>
+            
+            <h3 class="heading-medium">Success summary</h3>
+            <p>Success feedback</p>            
+        <div class="example">    
+                        <div class="grid-row">
+                <div class="column-two-thirds">   
+            <div class="success-summary">
+                <h3 class="heading-medium">Success summary</h3>
+                <p><a href="https://www.gov.uk/government/publications/apprenticeship-funding-legal-agreement-to-enable-spending" target="_blank">Read the <abbr title="Skills Funding Agency">SFA</abbr> agreement</a> - from May 2017, SFA will ask you to accept this agreement in order to spend apprenticeship funds.</p>
+            </div>
+                            </div>
+            </div>
+        </div>
+            
+            <pre>
+                <code class="html">
+&lt;div class="error-summary"&gt;
+    &lt;h3 class="heading-medium">&lt;/h3&gt;
+    &lt;p>&lt;/p&gt;
+&lt;/div&gt;
+                </code>
+            </pre>
+
+            
+            <h3 class="heading-medium">Error summary</h3>
+            <p>Please see <a href="#">Errors and validation</a> for more information</p>                        
+        
+    
+<section id="transactions-compelte">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+        <h3 class="heading-medium">Transaction complete</h3>
+            <p>At the end of a process, to signify the completion of a task the GDS green banner is used. Where applicable information such as reference numbers are included, otherwise just a simple message is provided. See <a href="#">Showroom: Transaction</a> for further details.</p>        
+        </div>
+    </div>
+    <div class="example">    
+            <div class="govuk-box-highlight">
+                <h2 class="bold-large">Account created</h2>
+                <p>You need to sign the SFA agreement</a> before you can start spending your levy.</p>
+                <p class="bold-small">Reference number: XF4F34</p>
+            </div>
+        </div>
+     <details>
+        <summary>SASS</summary>
+                    <pre>
+                <code class="sass">
+.govuk-box-highlight {
+    margin: 1em 0;
+    padding: 2em 0 1em;
+    color: #fff;
+    background: #28a197;
+    text-align: center;
+}
+
+
+.govuk-box-highlight {
+  padding: 1em 0;
+}
+
+.govuk-box-highlight p {
+  margin-bottom: 0;
+}
+
+.govuk-box-highlight p, .govuk-box-highlight h1, .govuk-box-highlight h2 {
+  margin: 0 auto;
+  max-width: 30em;
+}
+
+.govuk-box-highlight p {
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.govuk-box-highlight a {
+  color: white;
+}
+
+.govuk-box-highlight a:hover {
+  color: #2b8cc4;
+}
+
+.govuk-box-highlight a:visited {
+  color: #912B88;
+}
+
+                </code>
+            </pre>
+    </details>
+     <details>
+        <summary>HTML</summary>
+                    <pre>
+                <code class="html">
+&lt;div class="govuk-box-highlight"&gt;
+    &lt;h2 class="heading-large"&gt;&lt;/h2&gt;
+    &lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+                </code>
+            </pre> 
+    </details>
+
+</section>
+
+
+<section id="errors">
+    <h2 class="heading-large">Errors</h2>
+
+    <h3 class="heading-medium" id="one-question-per-page">Ask one question per page</h3>
+<div class="text">
+  <p>
+    Recovering from errors can be hard for users, especially if a page contains multiple errors.
+  </p>
+  <p>
+    Simplify forms by rewriting and where possible, splitting long forms across multiple pages - with each page asking a single question.
+  </p>
+  </div>
+<h3 class="heading-medium" id="summarise-errors">
+    Summarise errors at the top of the page
+  </h3>
+<p class="text lead-in">
+    You must:
+  </p>
+<ul class="text list list-bullet">
+    <li>show an error summary at the top of the page</li>
+    <li>include a heading to alert the user to the error</li>
+    <li>link to each of the problematic questions</li>
+  </ul>
+<h4 class="heading-small">Error message and summary box</h4>
+
+    <div class="example example-error">
+  <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Message to alert the user to a problem goes here
+  </h1>
+
+  <p>
+    Optional description of the errors and how to correct them
+  </p>
+
+  <ul class="error-summary-list">
+    <li><a href="#example-personal-details">Descriptive link to the question with an error</a></li>
+  </ul>
+
+</div>
+
+<h1 class="heading-large">
+  Check your personal details
+</h1>
+
+<p>
+  Look at your name, signature and other details.
+</p>
+
+<form>
+  <div class="form-group error">
+    <fieldset>
+
+      <legend id="example-personal-details">
+
+        <span class="form-label-bold">
+          Are your personal details correct and up-to-date?
+        </span>
+        <span class="error-message">
+          Error message about personal details goes here
+        </span>
+
+      </legend>
+
+        <label class="block-label selection-button-radio" data-target="public-sector" for="public-sector">
+                <input id="public-sector" type="radio" name="radio-group" value="public">
+                  Public sector organisation 
+        </label>
+        <label class="block-label selection-button-radio" data-target="private-sector" for="private-sector">
+                <input id="private-sector" type="radio" name="radio-group" value="private">
+                Private sector
+        </label>
+
+    </fieldset>
+  </div>
+
+  <input class="button" type="submit" value="Continue">
+
+</form>
+
+</div>
+</div>
+
+    
+<details>
+    <summary>HTML</summary>
+
+<pre><code class="html">
+&lt;div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1"&gt;
+
+  &lt;h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1"&gt;
+    Message to alert the user to a problem goes here
+  &lt;/h1&gt;
+
+  &lt;p&gt;
+    Optional description of the errors and how to correct them
+  &lt;/p&gt;
+
+  &lt;ul class="error-summary-list"&gt;
+    &lt;li&gt;&lt;a href="#example-personal-details"&gt;Descriptive link to the question with an error&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h1 class="heading-large"&gt;
+  Check your personal details
+&lt;/h1&gt;
+
+&lt;p&gt;
+  Look at your name, signature and other details.
+&lt;/p&gt;
+
+&lt;form&gt;
+  &lt;div class="form-group form-group-error"&gt;
+    &lt;fieldset&gt;
+
+      &lt;legend id="example-personal-details"&gt;
+
+        &lt;span class="form-label-bold"&gt;
+          Are your personal details correct and up-to-date?
+        &lt;/span&gt;
+        &lt;span class="error-message"&gt;
+          Error message about personal details goes here
+        &lt;/span&gt;
+
+      &lt;/legend&gt;
+
+      &lt;div class="multiple-choice"&gt;
+        &lt;input id="personal_details_yes" type="radio" name="personalDetails" value="Yes"&gt;
+        &lt;label for="personal_details_yes"&gt;Yes, my personal details are correct&lt;/label&gt;
+      &lt;/div&gt;
+
+      &lt;div class="multiple-choice"&gt;
+        &lt;input id="personal_details_no" type="radio" name="personalDetails" value="No"&gt;
+        &lt;label for="personal_details_no"&gt;No, some details are wrong or have changed&lt;/label&gt;
+      &lt;/div&gt;
+
+    &lt;/fieldset&gt;
+  &lt;/div&gt;
+
+  &lt;input class="button" type="submit" value="Continue"&gt;
+
+&lt;/form&gt;
+
+</code></pre>
+        
+</details>
+            
+        </div>
+    </div>            
+<div class="panel panel-border-narrow">
+    <h3 class="heading-small">
+      The error summary must appear at the top of the page, so it is visible when the page is refreshed and is immediately read out by assistive technology.
+    </h3>
+  </div>
+<h3 class="heading-medium" id="highlight-errors">Highlight errors in forms</h3>
+<p class="lead-in">
+    For each error:
+  </p>
+<ul class="list list-bullet text">
+    <li>write a message that helps the user to understand why the error occurred and what to do about it</li>
+    <li>put the message in the <code class="code">&lt;label&gt;</code> or <code class="code">&lt;legend&gt;</code> for the question,
+    after the question text, in red</li>
+    <li>use a red border to visually connect the message and the question it belongs to</li>
+    <li>if the error relates to specific text fields within the question, give these a red border as well</li>
+  </ul>
+<p class="text">
+    For red, use the <code class="code">$error-colour</code> Sass variable – find this in the GOV.UK frontend toolkit <a href="https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/_colours.scss" rel="external">colours.scss</a> file.
+  </p>
+
+<div class="example example-error">
+  <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-2" tabindex="-1">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">
+    Message to alert the user to a problem goes here
+  </h1>
+
+  <p>
+    Optional description of the errors and how to correct them
+  </p>
+
+  <ul class="error-summary-list">
+    <li><a href="#example-full-name">Descriptive link to the question with an error</a></li>
+    <li><a href="#example-ni-number">Descriptive link to the question with an error</a></li>
+  </ul>
+
+</div>
+
+<h1 class="heading-large">
+  Your personal details
+</h1>
+
+<div class="form-group error">
+
+  <label for="example-full-name" id="error-full-name">
+
+    <span class="form-label-bold">Full name</span>
+    <span class="form-hint">As shown on your birth certificate or passport</span>
+    <span class="error-message" id="error-message-full-name">Error message about full name goes here</span>
+
+  </label>
+
+  <input class="form-control form-control-error" id="example-full-name" type="text" name="fullName" value="" aria-describedby="error-message-full-name">
+</div>
+
+<div class="form-group error">
+
+  <label for="example-ni-number" id="error-ni-number">
+
+    <span class="form-label-bold">National Insurance number</span>
+    <span class="form-hint">
+      It’s on your National Insurance card, benefit letter, payslip or P60.
+      <br>
+      For example, ‘QQ 12 34 56 C’.
+    </span>
+    <span class="error-message" id="error-message-ni-number">
+      Error message about National Insurance number goes here
+    </span>
+
+  </label>
+
+  <input class="form-control form-control-error" id="example-ni-number" type="text" name="niNo" value="" aria-describedby="error-message-ni-number">
+
+</div>
+
+<input class="button" type="submit" value="Continue">
+
+</div>
+
+<details>
+    <summary>
+        HTML
+    </summary>
+<pre><code class="html">
+&lt;div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-2" tabindex="-1"&gt;
+
+  &lt;h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-2"&gt;
+    Message to alert the user to a problem goes here
+  &lt;/h1&gt;
+
+  &lt;p&gt;
+    Optional description of the errors and how to correct them
+  &lt;/p&gt;
+
+  &lt;ul class="error-summary-list"&gt;
+    &lt;li&gt;&lt;a href="#example-full-name"&gt;Descriptive link to the question with an error&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#example-ni-number"&gt;Descriptive link to the question with an error&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h1 class="heading-large"&gt;
+  Your personal details
+&lt;/h1&gt;
+
+&lt;div class="form-group form-group-error"&gt;
+
+  &lt;label for="example-full-name" id="error-full-name"&gt;
+
+    &lt;span class="form-label-bold"&gt;Full name&lt;/span&gt;
+    &lt;span class="form-hint"&gt;As shown on your birth certificate or passport&lt;/span&gt;
+    &lt;span class="error-message" id="error-message-full-name"&gt;Error message about full name goes here&lt;/span&gt;
+
+  &lt;/label&gt;
+
+  &lt;input class="form-control form-control-error" id="example-full-name" type="text" name="fullName" value="" aria-describedby="error-message-full-name"&gt;
+&lt;/div&gt;
+
+&lt;div class="form-group form-group-error"&gt;
+
+  &lt;label for="example-ni-number" id="error-ni-number"&gt;
+
+    &lt;span class="form-label-bold"&gt;National Insurance number&lt;/span&gt;
+    &lt;span class="form-hint"&gt;
+      It’s on your National Insurance card, benefit letter, payslip or P60.
+      &lt;br&gt;
+      For example, ‘QQ 12 34 56 C’.
+    &lt;/span&gt;
+    &lt;span class="error-message" id="error-message-ni-number"&gt;
+      Error message about National Insurance number goes here
+    &lt;/span&gt;
+
+  &lt;/label&gt;
+
+  &lt;input class="form-control form-control-error" id="example-ni-number" type="text" name="niNo" value="" aria-describedby="error-message-ni-number"&gt;
+
+&lt;/div&gt;
+
+&lt;input class="button" type="submit" value="Continue"&gt;
+</code></pre>    
+</details>
+
+</section>
+
+       
+<section id="information">
+
+    <div class="text">
+    <div class="hgroup">
+        <h2 class="heading-large">Information</h2>
+        <p>When information is not part of a feedback loop we use these visual treatments to draw attention to information deemed more important than the body content. There are several levels of contrast that can be used to achieve the level of prescendence you require.</p>
+        <p>While Notifications must remain at the top of the content the information boxes should be used in situe, close to the item it impacts.</p>
+    </div>
+    
+
+            <h3 class="heading-small">Highlighted text</h3>
+            <p>This is our strongest call out. It uses gov <code class="code">$purple</code> and is designed to contrast with the surrounding content thanks to the accent bar and 10% <code class="code">$purple</code>.</p>
+</div>            
+            <div class="example">
+            <div class="info-highlighted">
+                        <h3 class="heading-medium">Only levy payers can continue</h3>
+                        <p>By continuing you confirm that your organisation, or its <a href="#">connected organisations</a>, submits or will submit apprenticeship levy payments to HMRC.</p>
+                    </div>
+            </div>
+    
+<details>
+    <summary>HTML</summary>
+            <pre>
+<code class="html">
+&lt;div class="info-highlighted"&gt;
+    &lt;h3 class="heading-medium"&gt;Only levy payers can continue&lt;/h3&gt;
+    &lt;p&gt;By continuing you confirm that your organisation, or its &lt;a href="#"&gt;connected organisations&lt;/a&gt;, submits or will submit apprenticeship levy payments to HMRC.&lt;/p&gt;
+&lt;/div&gt;
+</code>
+            </pre>
+</details>    
+
+
+<details>
+    <summary>SASS</summary>
+    <pre>
+        <code class="sass">
+.info-highlighted {
+    max-width: 30em;
+    background: mix(white,$purple,90%);
+    border: none;
+    border-left: solid 10px $purple;
+}            
+        </code>
+    </pre>
+</details>
+    
+                <h3 class="heading-small">Inset text</h3>
+            <p>Use bordered inset text to draw attention to important content on the page. Comes in two flavours <code class="code">panel-border-narrow</code> and <code class="code">panel-border-wide</code>.</p>
+</div>            
+            <div class="example">
+           <div class="panel panel-border-narrow text">
+  <p>
+By continuing you confirm that your organisation, or its <a href="#">connected organisations</a>, submits or will submit apprenticeship levy payments to HMRC.
+  </p>
+</div>
+            </div>
+
+            <div class="example">
+           <div class="panel panel-border-wide text">
+  <p>
+By continuing you confirm that your organisation, or its <a href="#">connected organisations</a>, submits or will submit apprenticeship levy payments to HMRC.
+  </p>
+</div>
+            </div>
+    
+<details>
+    <summary>HTML</summary>
+    <pre>
+<code class="html">
+&lt;div class="panel panel-border-wide"&gt;
+    &lt;h3 class="heading-medium"&gt;Only levy payers can continue&lt;/h3&gt;
+    &lt;p&gt;By continuing you confirm that your organisation, or its &lt;a href="#"&gt;connected organisations&lt;/a&gt;, submits or will submit apprenticeship levy payments to HMRC.&lt;/p&gt;
+&lt;/div&gt;
+</code>
+            </pre>
+</details>
+
+<details>
+    <summary>SASS</summary>
+
+    <pre>
+        <code class="sass">
+.panel {
+  @include box-sizing(border-box);
+  @extend %contain-floats;
+  clear: both;
+  border-left-style: solid;
+  border-color: $border-colour;
+
+  padding: em(15, 19);
+  margin-bottom: em(15, 19);
+
+  :first-child {
+    margin-top: 0;
+  }
+
+  :only-child,
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.panel-border-wide {
+  border-left-width: 10px;
+}
+
+// Used to show the left edge of "toggled" content
+.panel-border-narrow {
+  border-left-width: 5px;
+}
+
+// Panels within form groups
+// By default, panels have 15px bottom margin
+.form-group .panel-border-narrow {
+  float: left;
+  width: 100%;
+  // Remove the bottom padding as .form-group sets a bottom margin
+  padding-bottom: 0;
+  // Don't remove the bottom margin for all panels, assume they are often within stacked groups
+}
+
+// Note: This is incredibly fragile, and needs rebuilding.
+
+// The first panel in a group
+.form-group .panel-border-narrow:first-child {
+  margin-top: 10px;
+}
+
+// The last panel in a group
+.form-group .panel-border-narrow:last-child {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+// For inline panels
+.inline .panel-border-narrow {
+  margin-top: 10px;
+  margin-bottom: 0;
+}          
+        </code>
+    </pre>
+</details>
+
+       <h3 class="heading-small">Legal text</h3>
+            <p>Use bold text with an exclamation icon if there are legal consequences - for example, a fine or prison sentence.</p>
+
+            <div class="example">
+<div class="notice">
+  <i class="icon icon-important">
+    <span class="visually-hidden">Warning</span>
+  </i>
+  <strong class="bold-small">
+    You can be fined up to £5,000 if you don’t register.
+  </strong>
+</div>
+
+            </div>
+<details>
+    <summary>HTML</summary>
+            <pre>
+<code class="html">
+&lt;div class="notice"&gt;
+  &lt;i class="icon icon-important"&gt;
+    &lt;span class="visually-hidden"&gt;Warning&lt;/span&gt;
+  &lt;/i&gt;
+  &lt;strong class="bold-small"&gt;
+    You can be fined up to £5,000 if you don’t register.
+  &lt;/strong&gt;
+&lt;/div&gt;
+</code>
+            </pre>    
+</details>            
+
+
+<div class="text">
+<h3 class="heading-small">Hidden text (progressive disclosure)</h3>
+<p>Use this to make your page easier to scan, only showing contextual information when required.</p>
+</div>
+
+<div class="example">
+    <details>
+        <summary>Help with nationality</summary>
+        <div class="text">
+        <p>
+      If you’re not sure about your nationality, try to find out from an official document like a passport or national ID card.
+    </p>
+
+    <p>
+      We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t provide your nationality, you’ll have to send copies of identity documents through the post.
+    </p>
+    </div>
+    </details>
+</div>
+<details>
+    <summary>HTML</summary>
+<pre>
+    <code class="html">
+            &lt;details&gt;
+        &lt;summary&gt;Help with nationality&lt;/summary&gt;
+        &lt;div class="text"&gt;
+        &lt;p&gt;
+      If you’re not sure about your nationality, try to find out from an official document like a passport or national ID card.
+    &lt;/p&gt;
+
+    &lt;p&gt;
+      We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t provide your nationality, you’ll have to send copies of identity documents through the post.
+    &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;/details&gt;
+    </code>
+</pre>    
+</details>
+
+
+<details>
+    <summary>SASS</summary>
+    
+    <pre>
+        <code class="sass">
+details {
+  display: block;
+  clear: both;
+
+  summary {
+    display: inline-block;
+    color: $govuk-blue;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: em(5);
+
+    &:hover {
+      color: $link-hover-colour;
+    }
+
+    &:focus {
+      outline: 3px solid $focus-colour;
+    }
+  }
+
+  // Underline only summary text (not the arrow)
+  .summary {
+    text-decoration: underline;
+  }
+
+  // Match fallback arrow spacing with -webkit default
+  .arrow {
+    margin-right: .35em;
+    font-style: normal;
+  }
+
+}        
+        </code>
+    </pre>
+</details>
+</section>
+            
+    
+
+  
+    
+</main>
+{% endblock %}

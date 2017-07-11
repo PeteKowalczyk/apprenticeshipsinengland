@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Sprint {{sprint}} - Dashboard
+{% endblock %}
+
+{% block inside_header %}
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+{% block after_header %}
+{% include "sprint/"+sprint+"/includes/header.html" %}
+{% endblock %}
+
+<main id="content" role="main" tabindex="-1">
+  <h1 class="heading-xlarge">
+    Headings
+  </h1>
+
+  <div class="text">
+  </div>
+  <p class="lede">
+  How we write headings, and maintain structure and consistency.       </p>
+
+  <p>Headings are split into 3 categories: homepage headers, dashboard headers, and page titles.</p>
+
+
+<p><span class="bold-small">Homepage headers:</span> aim for short passive nominalised terms, eg:
+<ul><li>Finance</li>
+<li>Apprentices</li>
+<li>PAYE schemes</li>
+<li>Your team</li></ul></p><br>
+
+<p><span class="bold-small">Dashboard headers:</span> aim for active phrases, eg:
+<ul><li>View your finances</li>
+<li>Download financial data</li>
+<li>Add an apprentice</li>
+<li>Manage your apprentices</li></ul></p><br>
+
+<p><span class="bold-small">Page titles:</span> aim for active phrases pertaining to the specific action on that page wherever possible, eg:
+<ul><li>Confirm your identity</li>
+<li>Enter your access code</li>
+<li>Add an organisation</li>
+<li>Check details</li></ul></p>
+
+    </div>
+  </div>
+
+
+
+</main>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Sprint {{sprint}} - Dashboard
+{% endblock %}
+
+{% block inside_header %}
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+{% block after_header %}
+{% include "sprint/"+sprint+"/includes/header.html" %}
+{% endblock %}
+
+<main id="content" role="main" tabindex="-1">
+  <h1 class="heading-xlarge">
+    Foundation
+  </h1>
+
+  <div class="text">
+    <p class="lede">
+Building blocks for any web based application
+    </p>
+  </div>
+
+  <h2 class="heading-small heading-contents">Contents:</h2>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+        <pre>
+        <code  class="css">
+            .class {
+            background: red;
+            }
+        </code>
+        </pre>
+        Table of contents
+      <ul class="list list-contents">
+          <li><a href="#Typography">Typography</a></li>
+      </ul>
+        
+        <h1 id="#Typography" class="heading-xlarge">Typography</h1>
+ <div class="text">
+    <p class="lede">
+      For GOV.UK domains, always use the GDS Transport Website font in Light and Bold.
+    </p>
+  </div>
+    </div>
+  </div>
+
+  
+    
+</main>
+{% endblock %}

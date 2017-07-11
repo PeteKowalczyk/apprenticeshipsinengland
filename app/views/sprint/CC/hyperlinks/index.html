@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Sprint {{sprint}} - Dashboard
+{% endblock %}
+
+{% block inside_header %}
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+{% block after_header %}
+{% include "sprint/"+sprint+"/includes/header.html" %}
+{% endblock %}
+
+<main id="content" role="main" tabindex="-1">
+  <h1 class="heading-xlarge">
+      Hyperlinks
+  </h1>
+  <p class="lede">
+How to make hyperlinks useful and accessible.  </p>
+  <div class="text">
+
+  <p>As much as possible, make links either active (include a verb) or make them describe a situation. And make sure the hyperlink doesn’t cover full stops.</p>
+
+  <p>For example:</p>
+
+  <p><a href="">Find out how the apprenticeship levy works</a>.</p>
+
+  <p><a href="">Can't find your Government Gateway details?</a></p>
+  <p><a href="">Forgotten your password?</a>
+
+</div>
+
+
+
+
+</main>
+{% endblock %}

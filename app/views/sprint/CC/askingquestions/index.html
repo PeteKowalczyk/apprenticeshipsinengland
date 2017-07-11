@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Sprint {{sprint}} - Dashboard
+{% endblock %}
+
+{% block inside_header %}
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+{% block after_header %}
+{% include "sprint/"+sprint+"/includes/header.html" %}
+{% endblock %}
+
+<main id="content" role="main" tabindex="-1">
+
+  <h1 class="heading-xlarge">
+    Asking questions
+  </h1>
+  <p class="lede">
+How we create a clear dialogue with users.       </p>
+  <div class="text">
+
+  <p>We default to radio buttons when asking questions or offering options.</p>
+
+  <p>Try to use a Yes / No pattern as it tends to focus the question. For example, rather than:</span></p>
+
+  <p><span class="bold-small">Who'll sign agreements?</span><br>
+  Me / Someone else</p>
+
+  <p>Try to reposition questions something like this:</p>
+
+  <p><span class="bold-small">Sign agreements now?</span><br>
+  Yes / No, not now</p>
+
+  <p><span class="bold-small">Add more PAYE schemes now?</span><br>
+    Yes / No, not now</p>
+
+
+
+
+
+
+
+</main>
+{% endblock %}

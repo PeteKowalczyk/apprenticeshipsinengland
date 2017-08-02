@@ -1,0 +1,29 @@
+{% extends "layout.html" %} {% block page_title %} Sprint {{sprint}} - Dashboard {% endblock %} {% block inside_header %} {% endblock %} {% block content %} {% block after_header %} {% include "../includes/header.html" %}
+ {% endblock %}
+
+<main id="content" role="main" tabindex="-1">
+    <h1 class="heading-xlarge">
+      Buttons
+  </h1>
+  <p class="lede">
+How to format text for buttons. </p>
+    <div class="text">
+
+    <p>For start buttons we simply use the label <span class="bold-small">Start</span>.</p>
+
+    <p>Often within a transaction the green button simply moves the user onto the next step, in which case the default label is <span class="bold-small">Continue</span>. </p>
+
+      <p>But a lot of the time the green button starts a transaction in which case the label needs to say what the purpose of the transaction is, eg <span class="bold-small">Add new team member</span>.	  </p>
+
+    <p>We don’t use articles in green buttons. As such, we don’t need them to be first or second person. Your / my etc. So:	</p>
+
+  <p>Rather than: Find your training providers or Find my training providers<br>
+    Say: <span class="bold-small">Find training providers</span></p>
+
+    <p>Rather than: Filter your apprentices or Filter my apprentices<br>
+    Say: <span class="bold-small">Filter apprentices</span></p>
+
+    </div>
+
+</main>
+{% endblock %}

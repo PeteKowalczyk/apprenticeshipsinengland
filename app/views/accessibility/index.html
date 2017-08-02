@@ -1,0 +1,83 @@
+{% extends "layout.html" %} {% block page_title %} Sprint {{sprint}} - Dashboard {% endblock %} {% block inside_header %} {% endblock %} {% block content %} {% block after_header %} {% include "../includes/header.html" %}
+ {% endblock %}
+
+<main id="content" role="main" tabindex="-1">
+    <h1 class="heading-xlarge">
+    Accessibility
+  </h1>
+  <p class="lede">
+How to make sure your service works best for everyone.  </p>
+    <div class="text">
+
+    <p>Accessibility can refer to many aspects of user experience. Some people use screen readers to read the interface, while other read the interface visually but they struggle with some elements. Dyspraxia, Dyslexia, ADHD, ADD can all impact the way users experience a website. Mental illness such as depression can affect users’ experience, and in other ways, so can being stressed or being short on time. </p>
+
+  <p>Making services work for everyone is an area where content design can really step up and help. </p>
+
+  <p>Using plain English goes a long way to making the user experience more accessible. But a content designer should also work to make sure users can access the information, eg is the page in an accessibly format like html, and they should also make sure users aren’t overloaded within information they don’t need. </p>
+
+  <p>In general, you should keep pushing your word count to the lower end of this chart. The few words on a page the easier a page is to read, and the more likely it is to be read. Neilson Norman Group https://media.nngroup.com/media/editor/alertbox/percent-of-text-read.gif </p>
+
+  <p>However, most importantly you should speak to your audience to understand their environment and disposition when using the service. Test out your ideas to see what works best for your user group. </p>
+
+  <p>Best practice advances quickly, but there are some day-to-day things you can do to ensure accessibility isn’t left behind when creating services. </p>
+
+<h2 class="heading-large">Page titles</h2>
+
+<p>Page titles are key to helping people navigate around websites. If they don’t tell the user exactly what’s on the page people get lost, frustrated, and stressed. </p>
+
+<h2 class="heading-large">Headers</h2>
+
+<p>Make sure pages are structuring using headings and subheadings. We use H1s to break pages up, and H2 and H3 headings to create subsections within sections. This makes pages more scannable but it also helps with accessibility since screen readers can easily tab through the page to find the information that users are looking for. </p>
+
+<h2 class="heading-large">Structure</h2>
+
+<p>You should make sure that the order screen readers tab through your pages matches the logical order that users would read the page. You can work with your front end developer to make sure this is set up correctly. </p>
+
+<h2 class="heading-large">Area tags </h2>
+
+<p>Use area codes with the page to create alternative or additional messages that you might want to give to people using a screen reader. For example, on a page title submit your tax return there might be a button that says “Submit now”. This might work fine for users reading the content on a screen, but for people using a screen reader that are tabbing through the page listing to each element in isolation, you might want the area code for the submit button to be more explicit. Eg, “Submit your tax return now”. </p>
+
+<h2 class="heading-large">Scalability</h2>
+
+<p>You should always check that your designs work on screens of all sizes. Try a browser emulator like Nimbus or other chrome extensions like Window Resizer, or simply resize your browser window manually to see how your content responds when the screen is resized. </p>
+
+<h2 class="heading-large">Automated testing </h2>
+
+<p>You can also use free automated accessibility test to check the overall accessibility of your pages. W3C provide a list of available tools. https://www.w3.org/WAI/ER/tools/ </p>
+
+
+<h2 class="heading-large">Join the accessibility community</h2>
+
+<p>A good source of accessibility information is the Government Accessibility Community. It’s very active and there are loads of good threads.</p>
+
+<p>You can also join the google group and discuss you accessibility challenges. <br>
+https://groups.google.com/a/digital.cabinet-office.gov.uk/forum/?hl=en-GB#!forum/accessibility-community </p>
+
+<p>Home Office Blog<br>
+Discovering the value of access needs research</p>
+ 
+<p>DVLA Blog<br>
+Making sure our online services are accessible to all</p>
+ 
+<p>GDS User Research Blog<br>
+Research with visually impaired users</p>
+ 
+<p>GDS Accessibility Blog<br>
+Experiencing digital accessibility first-hand</p>
+ 
+<p>GOV.UK Verify Blog<br>
+Accessibility research for GOV.UK Verify</p>
+ 
+<p>GDS Blog<br>
+Research with blind users on mobile devices<br>
+User testing accessibility<br>
+https://gds.blog.gov.uk/2016/02/23/writing-content-for-everyone/</p>
+ 
+<p>Making your service accessible: an introduction<br>
+https://www.gov.uk/service-manual/helping-people-to-use-your-service/making-your-service-accessible-an-introduction </p>
+
+
+    </div>
+
+</main>
+{% endblock %}

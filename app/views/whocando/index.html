@@ -1,1 +1,74 @@
+{% extends "layout.html" %}
 
+{% block page_title %}
+  Sprint {{sprint}} - Dashboard
+{% endblock %}
+
+{% block inside_header %}
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+{% block after_header %}
+{% include "../includes/header.html" %}
+{% endblock %}
+
+
+
+<main id="content" role="main" tabindex="-1">
+
+  <h1 class="heading-xlarge">
+  CLART
+  </h1>
+  <p class="lede">
+How to write for the web, and write for users.           </p>
+
+  <div class="text">
+  <p>
+    Our style is based on <a href="https://www.gov.uk/guidance/style-guide">the GDS style guide</a>.</p>
+    
+    <p>We write in plain English so that we don’t exclude people based on their education, cognitive function or reading ability. And we write in an accessible and structured way. </p>
+   
+ <h2 class="heading-medium">Readability</h2>
+
+   <p><span class="bold-small">Plain English</span></p> 
+
+<p>We use plain English because it’s inclusive and easier for everyone to understand. <a href="http://www.hsph.harvard.edu/healthliteracy/resources/teaching-patients-with-low-literacy-skills/%C2%A0">Research from Harvard University</a> has found that people at all literacy levels prefer plain English.
+<p><i>Teaching patients with low literacy skills, by Doak, Doak, & Root, 1996, Harvard, School of public health, page 7.</i></p> 
+
+ <p><span class="bold-small">F-shaped pattern</span></p>
+
+<p>We put important information at the top of web pages and front-load each sentence with the most important details. This is because Nielsen Norman Group (2006) showed that users scan web pages in a F-shaped pattern, scanning down the left side of the screen and reading across when they find something interesting.</p> 
+
+<p><i>Nielsen, J. (2006) ‘F-shaped pattern for reading web content’ http://www.nngroup.com/articles /f-shaped-pattern-reading-webcontent/</i><p>
+
+    <p><span class="bold-small">Scannability</span></p>
+
+<p>We make pages scannable by using short sections of text, headers, bulleted lists to help people find information quickly and help that perform their tasks. Morkes and Nielsen (1997) found that by doing this users were able to perform tasks faster with fewer errors and better information recall. </p>
+
+<p>Nielsen’s general recommendations for scannable text:</p> <p><ul><li>highlighted keywords (for example, using bold type or colour)</li><li>subheads</li><li>bulleted lists</li><li>clear organisation of paragraphs</li><li>concise language</li></ul></p>
+
+<p><i>Morkes, J. and J. Nielsen, (1997) ‘Concise, SCANNABLE, and objective: how to write for the web’ http://www.nngroup.com/articles /concise-scannable-andobjective-how-to-write-for-theweb/ Nielsen, J. (1997b) ‘Be succinct! (Writing for the web)’ http://www.nngroup.com/articles /be-succinct-writing-for-the-web/</i></p>
+    
+ <h2 class="heading-medium">Additonal style considerations</h2>
+
+<p>Don’t use a hyphen unless it’s confusing without it</p>
+    <p>  Don’t use e.g. and i.e. Use 'for example' or ‘like’</p>
+  <p>  Try to start sentences with the user’s objective. For example: To spend funds, you need to <a href="">sign an agreement for Tesco plc</a>
+      </p>
+  </div>
+
+
+
+
+  </div>
+
+
+
+</main>
+{% endblock %}
